@@ -14,7 +14,7 @@
 
 package main
 
-import "github.com/fernandezvara/rabbitmq-check/cmd"
+import "github.com/fernandezvara/rabbitmq-checker/cmd"
 
 func main() {
 	cmd.Execute()
