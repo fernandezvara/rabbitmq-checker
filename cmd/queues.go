@@ -17,7 +17,7 @@ package cmd
 import (
 	"os"
 
-	"github.com/fernandezvara/rabbitmq-check/checks"
+	"github.com/fernandezvara/rabbitmq-checker/checks"
 	"github.com/spf13/cobra"
 )
 
@@ -40,7 +40,7 @@ raise an alert.`,
 }
 
 func init() {
-	QueuesCmd.Flags().StringSliceVarP(&queueNames, "queue", "q", []string{"*"}, "queue names to watch")
+	QueuesCmd.Flags().StringSliceVarP(&queueNames, "queue", "q", []string{".*"}, "queue names to watch")
 	QueuesCmd.Flags().BoolVarP(&queueIgnoreIfNotExists, "ignore", "i", false, "ignore non-existent queues")
 	QueuesCmd.Flags().IntVarP(&queueWarning, "warning", "w", 100, "messages count threshold (WARNING)")
 	QueuesCmd.Flags().IntVarP(&queueCritical, "critical", "c", 100, "messages count threshold (CRITICAL)")
